@@ -1,0 +1,31 @@
+<div class="p-3">
+  <h3>Prodcut compnent</h3>
+  <table class="w-full">
+    <thead class="">
+    <tr class="border-b-4  border-black">
+      <th class="pr-10">ID</th>
+      <th class="pr-10">Nome</th>
+      <th class="pr-10">Price</th>
+      <th class="pr-10">Etat</th>
+      <th class="pr-10">Supprimer</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (p of products ;track p){
+        <tr >
+          <td class="py-5">{{p.id}}</td>
+          <td>{{p.nom}}</td>
+          <td>{{p.prix}}</td>
+          @if (p.selected) {
+            <mat-icon>check</mat-icon>
+          } @else {
+            <mat-icon>cancel</mat-icon>
+          }
+          <td class="">
+            <button (click)="handleDeltet(p.id)" class=" px-3 py-2 flex text-red-400 justify-center border-2 border-red-400 rounded-xl"><mat-icon color="red">delete</mat-icon></button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
